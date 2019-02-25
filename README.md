@@ -11,8 +11,8 @@ $ cd deeplink
 test deep link with Expo Client:
 $ expo start 
 
-open in browser
-<a href="exp:192.168.0.102:19000/--/profile/Eric">Visit deep Profile with param @ expo client</a>
+open in browser with html a tag
+exp:192.168.0.102:19000/--/profile/Eric
 
 
 test deep link with standalone app:
@@ -20,5 +20,5 @@ $ expo build:android
 
 install APK 
 
-open in browser
-<a href="deep:profile/Eric">Visit deep Profile with param @ standalone App</a>
+open in browser with html a tag
+deep://profile/Eric
