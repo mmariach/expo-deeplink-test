@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "deeplink",
+    "slug": "deeplink",
+    "privacy": "public",
+    "sdkVersion": "32.0.0",
+    "scheme": "deep",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "io.marlis.deep"
+    },
+    "android": {
+      "package": "io.marlis.deep"
+    }
+  }
+}
