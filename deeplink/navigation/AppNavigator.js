@@ -1,27 +1,48 @@
 import React from 'react';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import {
+  Platform,
+} from 'react-native';
+import { createStackNavigator, createSwitchNavigator, createAppContainer, createBottomTabNavigator } from "react-navigation";
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import StackProfileScreen from '../screens/StackProfileScreen';
 
 
-const RootStack = createStackNavigator(
+const TestStack = createStackNavigator({
+  Profile: {
+    screen: ProfileScreen,
+    path: 'profile/:name',
+  },
+  Details: {
+    screen: StackProfileScreen,
+    path: 'details/:name',
+  },
+});
+
+const RootStack = createBottomTabNavigator(
   {
-    Home: HomeScreen,
     Home: {
       screen: HomeScreen,
       path: 'home',
     },
-    Details: {
-      screen: ProfileScreen,
-      path: 'profile/:name',
+    TestStack: {
+      screen: TestStack,
+      path: '',
     },
   },
   {
     initialRouteName: 'Home',
   }
 );
+console.log('Tabs', RootStack.router.childRouters)
 
-const MainNavigator = createAppContainer(RootStack);
+const MainNavigator = createAppContainer(createSwitchNavigator({
+  Main: {
+    screen: RootStack,
+    path: '',
+  },
+}));
+console.log('Container', MainNavigator.router.childRouters)
 
 //const prefix = 'deep://';
 const prefix = Expo.Linking.makeUrl('/');

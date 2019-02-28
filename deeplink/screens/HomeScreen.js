@@ -12,8 +12,8 @@ export default class HomeScreen extends React.Component {
         <Button
           title="Go to Details"
           onPress={() => {
-            /* 1. Navigate to the Details route with params */
-            this.props.navigation.navigate('Details', {
+            /* 1. Navigate to the Profile route with params */
+            this.props.navigation.navigate('Profile', {
               name: 'Test Name',
             });
           }}
